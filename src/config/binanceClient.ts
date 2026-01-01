@@ -17,7 +17,10 @@ import { Staking } from "@binance/staking";
 
 const API_KEY = process.env.BINANCE_API_KEY;
 const API_SECRET = process.env.BINANCE_API_SECRET;
-const BASE_URL = "https://api.binance.com";
+//const BASE_URL = "https://api.binance.com";
+const IS_TESTNET = process.env.BINANCE_TESTNET === 'true';
+const BASE_URL = IS_TESTNET ? 'https://testnet.binance.vision' : 'https://api.binance.com';
+
 
 const configurationRestAPI = {
     apiKey: API_KEY ?? "",
