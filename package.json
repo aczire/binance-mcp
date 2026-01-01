@@ -60,6 +60,7 @@
         "@binance/algo": "^1.0.0",
         "@binance/c2c": "^1.0.1",
         "@binance/connector": "^3.6.1",
+	"@binance/connector-typescript": "^0.3.0",
         "@binance/convert": "^1.0.1",
         "@binance/copy-trading": "^1.0.1",
         "@binance/dual-investment": "^2.0.0",
