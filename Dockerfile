@@ -20,9 +20,8 @@ RUN npm run build
 RUN npm prune --production
 
 # Set environment variables (these will be overridden by docker-compose or docker run)
-ENV BINANCE_API_KEY=""
-ENV BINANCE_API_SECRET=""
 ENV NODE_ENV=production
+ENV BINANCE_TESTNET=true
 
 # Expose the port if your MCP server uses one (adjust if needed)
 # Note: MCP servers typically use stdio, so this may not be necessary
