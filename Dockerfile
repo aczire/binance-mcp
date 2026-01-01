@@ -7,14 +7,17 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install ALL dependencies (including devDependencies for building)
+RUN npm ci
 
 # Copy source code
 COPY . .
 
 # Build the TypeScript code
 RUN npm run build
+
+# Remove devDependencies after build to reduce image size
+RUN npm prune --production
 
 # Set environment variables (these will be overridden by docker-compose or docker run)
 ENV BINANCE_API_KEY=""
